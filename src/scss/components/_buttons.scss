@@ -1,0 +1,124 @@
+.button {
+    display: inline-flex;
+    @include font-size(8, mobile, true, false, true);
+    @if ( get-font-size(8, desktop) !=get-font-size(8, mobile)) {
+        @include media( '>medium') {
+            @include font-size(8, desktop, true, false, true);
+        }
+    }
+    @include font-weight(semibold);
+    line-height: 16px;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    background-color: color(bg, 3);
+    color: color(typography, 1) !important;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    justify-content: center;
+    padding: 16px 32px;
+    height: 48px;
+    text-align: center;
+    white-space: nowrap;
+    &:hover {
+        background: lighten(color(bg, 3), 1%);
+    }
+    &:active {
+        outline: 0;
+    }
+    &::before {
+        border-radius: 2px;
+    }
+}
+
+.button-sm {
+    padding: 8px 24px;
+    height: 32px;
+}
+
+.button-primary {
+    background: mix(color(primary, 1), color(primary, 2));
+    background: linear-gradient(65deg, color(primary, 1) 0, color(primary, 2) 100%);
+    &:hover {
+        background: lighten(mix(color(primary, 1), color(primary, 2)), 2%);
+        background: linear-gradient(65deg, lighten(color(primary, 1), 2%) 0, lighten(color(primary, 2), 2%) 100%);
+    }
+}
+
+.button-block {
+    display: flex;
+}
+
+.button-block {
+    display: flex;
+    width: 100%;
+}
+
+@include media( '<=medium') {
+    .button-wide-mobile {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+
+/* download button */
+
+$bg-color-android: #a2c437;
+$bg-color-ios: #3b5a9b;
+$font-color: #fff;
+.btn {
+    width: 200px;
+    height: 60px;
+    border: none;
+    background-color: #ddd;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn__logo {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: 10px 0 14px 20px;
+    position: relative;
+}
+
+.btn__content {
+    width: 110px;
+    height: 28px;
+    font-size: 12px;
+    float: right;
+    margin-right: 15px;
+    text-align: left;
+    &+& {
+        margin-top: 2px;
+    }
+}
+
+.btn__content--big {
+    height: 22px;
+    font-size: 22px;
+    margin-top: 8px;
+}
+
+.btn--ios {
+    background-color: $bg-color-ios;
+    color: $font-color;
+    &:hover {
+        background: darken($bg-color-ios, 8);
+    }
+}
+
+.btn--android {
+    background-color: $bg-color-android;
+    color: $font-color;
+    &:hover {
+        background: darken($bg-color-android, 8);
+    }
+}
+
+.btn--radius {
+    border-radius: 30px;
+}
