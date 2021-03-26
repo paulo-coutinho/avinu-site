@@ -29,14 +29,19 @@ main {
     padding-bottom: 48px;
 }
 
-.header-logo-image {
-    width: 100px;
-    height: 100px;
-}
-
 @include media( '>medium') {
     .section-inner {
         padding-top: 88px;
         padding-bottom: 88px;
     }
+}
+
+.header-logo-image {
+    width: 100px;
+    height: 100px;
+}
+
+.team-image {
+    width: 100px;
+    height: 100px;
 }
