@@ -44,4 +44,14 @@ main {
 .team-image {
     width: 100px;
     height: 100px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    @media (min-width: 640px) {
+        margin: 0 0 0 0;
+    }
+    @media (max-width: 640px) {
+        margin: 0 auto 0 auto;
+    }
 }
